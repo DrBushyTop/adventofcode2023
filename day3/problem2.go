@@ -16,6 +16,7 @@ func Problem2() {
 	result := 0
 
 	for _, numbers := range gears {
+		// Only consider gears with exactly two adjacent numbers
 		if len(numbers) != 2 {
 			continue
 		}
@@ -49,7 +50,7 @@ func Traverse2(schematic [][]rune) map[Coordinate][]int {
 				}
 				col++
 			}
-			// If at the end of the number it is a part number, add the number to the result sum
+			// If we're next to a gear, we need to add the number to the items adjacent to the gear
 			if gearLoc.row != -1 && gearLoc.col != -1 {
 				num, err := strconv.Atoi(currentNumStr)
 				if err != nil {
@@ -68,6 +69,7 @@ func Traverse2(schematic [][]rune) map[Coordinate][]int {
 
 }
 
+// Duplicate for readability
 var Directions2 = [][]int{
 	{-1, -1}, {-1, 0}, {-1, 1},
 	{0, -1}, {0, 1},
