@@ -13,7 +13,7 @@ func Problem2() {
 	// Setup trie
 	setup()
 
-	file, err := os.Open("./day1/problem.input")
+	file, err := os.Open("./day1/input.txt")
 	if err != nil {
 		fmt.Println(err)
 		return
