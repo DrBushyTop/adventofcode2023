@@ -6,6 +6,8 @@ import (
 )
 
 func Problem1() {
+	// Could optimize the space complexity of this part a bit by keeping 3 lines at a time. Depending on if the schematics
+	// are always the same size, this would bring the complexity to O(1) or O(N) where N is the number of characters on a line
 	schematic, err := ParseSchematic("./day3/input.txt")
 	if err != nil {
 		panic(err)
